@@ -1,50 +1,23 @@
 package Week1.date03_04;
-
-import java.util.Scanner;
-
 public class ReadNumber {
-    private static String[] tensName = {
-            "",
-            " ten",
-            " twenty",
-            " thirty",
-            " forty",
-            " fifty",
-            " sixty",
-            " seventy",
-            " eighty",
-            " ninety"
-    };
-    private static String[] numName ={
-            "",
-            "one",
-            "two",
-            "three",
-            "four",
-            "five",
-            "six",
-            "seven",
-            "eight",
-            "nine",
-            " ten",
-            " eleven",
-            " twelve",
-            " thirteen",
-            " fourteen",
-            " fifteen",
-            " sixteen",
-            " seventeen",
-            " eighteen",
-            " nineteen"
-    };
-
-
-
-
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Enter Number:");
-        int num = sc.nextInt();
+        int count=0;
+        int total=0;
+        int num =2;
+        do {
+            int uoc=0;
+            for (int i =1;i<= num;i++){
+                if (num%i == 0){
+                    uoc++;
+                }
+            }
+            if (uoc==2){
+                count++;
+                total += num;
+            }
+             num++;
+        }while (count<20);
+            System.out.println("total Num:"+total);
 
 
     }
