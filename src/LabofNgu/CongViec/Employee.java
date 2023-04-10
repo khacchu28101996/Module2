@@ -1,24 +1,26 @@
 package LabofNgu.CongViec;
 
 public class Employee {
-    int id;
-    int age;
-    String name;
+    private int id;
+    private String name;
+    private int age;
 
-    public int getId() {
-        return id;
+    public Employee() {
     }
 
-    public void setId(int id) {
+    public Employee(int id, String name, int age) {
         this.id = id;
-    }
-
-    public int getAge() {
-        return age;
-    }
-
-    public void setAge(int age) {
+        this.name = name;
         this.age = age;
+    }
+
+    @Override
+    public String toString() {
+        return "Employee{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", age=" + age +
+                '}';
     }
 
     public String getName() {
@@ -29,21 +31,19 @@ public class Employee {
         this.name = name;
     }
 
-    public Employee() {
+    public int getAge() {
+        return age;
     }
 
-    public Employee(int id, int age, String name) {
-        this.id = id;
+    public void setAge(int age) {
         this.age = age;
-        this.name = name;
     }
 
-    @Override
-    public String toString() {
-        return "Job{" +
-                "id=" + id +
-                ", age=" + age +
-                ", name='" + name + '\'' +
-                '}';
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 }
