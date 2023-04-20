@@ -9,7 +9,6 @@ public interface Manager {
     void updateStudent();
     void sortStudentAvg();
 
-//    void sortStudentAvg(ArrayList<Student> people);
 
     void sumAvg();
 }

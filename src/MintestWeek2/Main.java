@@ -18,7 +18,7 @@ public class Main {
             System.out.println("5.Update Student");
             System.out.println("6.Sort Student");
             System.out.println("7.Sum Avg");
-            System.out.println("Nhập lựa chọn:");
+            System.out.println("Chọn nào bạn ơi:");
             number = Integer.parseInt(scanner.nextLine());
             switch (number){
                 case 1:
@@ -36,7 +36,7 @@ public class Main {
                 case 5:
                     manageStudent.updateStudent();
                 case 6:
-                    manageStudent.sortStudentAvg();
+
                 case 7:
                     manageStudent.sumAvg();
                 case 0:

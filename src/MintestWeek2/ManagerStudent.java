@@ -75,12 +75,12 @@ public class ManagerStudent implements Manager {
         int updateId = Integer.parseInt(scanner.nextLine());
         int index = indexOfById(updateId);
         if (index != -1) {
-            System.out.println("nhập tên sửa:");
+            System.out.println("nhập tên sửxa:");
             String name = scanner.nextLine();
             if (!name.equals("")) {
                 people.get(index).setName(name);
             }
-            System.out.println("nhập tuổi sửa");
+            System.out.println("Enter Age");
             String age = scanner.nextLine();
             if (age.equals("")) {
                 people.get(index).setAge(age);
