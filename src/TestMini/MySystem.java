@@ -16,8 +16,6 @@ public class MySystem {
 
 
         do {
-
-
             System.out.println("MENU");
             System.out.println("1.Create Information Student");
             System.out.println("2.Edit Information Student By Id");
@@ -26,10 +24,9 @@ public class MySystem {
             System.out.println("0.Exit");
             System.out.println("Please enter the option: ");
             int choice = parseInt(scanner.nextLine());
-            switch (choice){
+            switch (choice) {
                 case 1:
                     studentManager.createStudent();
-
                     break;
                 case 2:
                     studentManager.editStudent();
@@ -46,9 +43,7 @@ public class MySystem {
                 default:
                     System.out.println("Information Incorrect:");
             }
-
-
-            }while (true);
-        }
+        } while (true);
     }
+}
 

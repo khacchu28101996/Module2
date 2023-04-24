@@ -3,8 +3,8 @@ package TestMini;
 public interface Manage<E> {
     void createStudent();
     void editStudent();
-    E deleteStudent();
-    E getStudent();
+    Student deleteStudent();
+    Student getStudent();
     void displayStudent();
 
     Student getById();

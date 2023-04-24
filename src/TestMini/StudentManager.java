@@ -7,6 +7,7 @@ public class StudentManager implements Manage<Student> {
     private final ArrayList<Student> students = new ArrayList<>();
 
     private static Scanner scanner = new Scanner(System.in);
+    Classroom classroom = new Classroom();
 
 
 
@@ -25,6 +26,7 @@ public class StudentManager implements Manage<Student> {
             System.out.println("Choose Gender Student");
             System.out.println("1. Male");
             System.out.println("2. Female");
+            System.out.println("3. Other");
             choice = Integer.parseInt(scanner.nextLine());
             switch (choice){
                 case 1:
@@ -33,14 +35,16 @@ public class StudentManager implements Manage<Student> {
                 case 2:
                     gender = "Female";
                     break;
+                case 3:
+                    gender = "Other";
+                    break;
 
             }
         }while (choice !=0);
         System.out.println("Enter Average Point:");
         double avgPoint = Double.parseDouble(scanner.nextLine());
         Classroom classroom = new Classroom();
-        students.add(new Student(name,age,gender,avgPoint, classroom));
-
+        students.add(new Student(name,age,gender,avgPoint,classroom.createClassroom()));
 
     }
 
@@ -61,6 +65,7 @@ public class StudentManager implements Manage<Student> {
             if (student instanceof Student){
                 Classroom classroom = (Classroom) student;
                 System.out.println(" Enter new Classroom");
+
             }
 
         }else {
@@ -73,6 +78,11 @@ public class StudentManager implements Manage<Student> {
     @Override
     public Student deleteStudent() {
         Student student = getById();
+        if (student != null){
+            students.remove(student);
+            return student;
+        }
+        System.out.println("Not Exist ID");
 
 
         return null;
@@ -99,6 +109,21 @@ public class StudentManager implements Manage<Student> {
         int id = Integer.parseInt(scanner.nextLine());
 
         return null;
+    }
+
+
+
+
+
+
+    private static void displayById(StudentManager studentManager){
+        Student st;
+        st = studentManager.getById();
+        if (st!= null){
+                System.out.println("Object is : ");
+                st.display();
+            }
+
     }
 
     }

@@ -7,10 +7,11 @@ import java.util.Scanner;
 public class ClassroomManage extends Classroom {
     private final Scanner scanner =  new Scanner(System.in);
     List<Classroom> classrooms = new ArrayList<>();
-    public void createClassroom(){
+    public Classroom createClassroom(){
         System.out.println("Enter Name Classroom");
         String name = scanner.nextLine();
-        classrooms.add(new Classroom(name));
+        return new Classroom(name);
+
 
 
     }

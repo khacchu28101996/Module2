@@ -72,4 +72,8 @@ public class Student {
                 ", avgPoint=" + avgPoint +
                 '}';
     }
+    public void display() {
+        System.out.printf("%-5s%-15s%-7s%s",
+               id,name,age,gender,avgPoint +"\n");
+    }
 }

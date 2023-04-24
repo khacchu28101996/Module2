@@ -30,4 +30,8 @@ public class Classroom extends Student{
     public void setName(String name) {
         this.name = name;
     }
+
+    public Classroom createClassroom() {
+        return null;
+    }
 }
