@@ -7,14 +7,14 @@ import java.util.Scanner;
 
 public class Test {
     private static void writeFile(List<Account>  accountList){
-        File file = new File("account.txt");
+        File file = new File("D:\\Modul2\\src\\BTVNNg\\account.txt");
         try{
             if(!file.exists()){
                 throw new FileNotFoundException();
             }
             BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(file));
-            for (Account acc: accountList) {
-                bufferedWriter.write(acc.toString() + "\n");
+            for (Account account: accountList) {
+                bufferedWriter.write(account.toString() + "\n");
             }
             bufferedWriter.close();
         }catch (IOException e){
@@ -23,7 +23,7 @@ public class Test {
     }
     private static void readFile(List<Account> accountList) {
         try{
-            File file = new File("account.txt");
+            File file = new File("D:\\Modul2\\src\\BTVNNg\\account.txt");
             FileReader fileReader = new FileReader(file);
             BufferedReader bufferedReader = new BufferedReader(fileReader);
             while (bufferedReader.readLine() != null){
@@ -54,10 +54,10 @@ public class Test {
                     String username = scanner.nextLine();
                     System.out.println("Enter password:");
                     String password = scanner.nextLine();
-                    for (Account acc: accountList) {
-                        if (acc.getUsername().equals(username) && acc.getPassword().equals(password)){
+                    for (Account account: accountList) {
+                        if (account.getUsername().equals(username) && account.getPassword().equals(password)){
 
-                            System.out.println("Hello " + acc.getFullname() + ".");
+                            System.out.println("Hello " + account.getFullname() + ".");
                         }
                     }
                     break;
@@ -65,8 +65,8 @@ public class Test {
                     System.out.println("Enter username:");
                     username = scanner.nextLine();
                     boolean flag = false;
-                    for (Account acc:accountList) {
-                        if(acc.getUsername().equals(username)){
+                    for (Account account:accountList) {
+                        if(account.getUsername().equals(username)){
                             System.out.println("Username already exists.");
                             flag = true;
                             break;
@@ -81,7 +81,6 @@ public class Test {
                         String phoneNumber = scanner.nextLine();
                         System.out.println("Enter address");
                         String address = scanner.nextLine();
-                        int id = accountList.size() + 1;
                         Account account = new Account(username,password,fullname,phoneNumber,address);
                         accountList.add(account);
                         writeFile(accountList);
